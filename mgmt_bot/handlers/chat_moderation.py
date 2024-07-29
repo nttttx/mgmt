@@ -86,7 +86,7 @@ async def _ban_user(
 
             str(datetime.timedelta(seconds=duration))
             if duration > 3
-            else "Never"
+            else "Forever"
         )
     )
 
