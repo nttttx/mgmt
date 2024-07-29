@@ -9,7 +9,7 @@ _HUMAN_TIME_REPR_MAP = {
     "d": 86400,
     "w": 604800,
     "M": 2629800,
-    "y": 31557600
+    "y": 31557600,
 }
 
 
@@ -17,9 +17,18 @@ def convert_human_time_string(human_time_repr: list[str]) -> int:
     time_delta = 0
     for time_string in human_time_repr:
         # Hacky trick:
-        #   mapping human's input 
+        #   mapping human's input
         #   with _HUMAN_TIME_REPR_MAP variable
         seconds = _HUMAN_TIME_REPR_MAP[time_string[-1]] * int(time_string[:-1])
-        log.debug("%s -> %s" % (time_string, seconds))
+        log.debug(
+            "%s -> %s",
+            time_string,
+            seconds
+        )
         time_delta += seconds
     return time_delta
+
+
+__all__ = [
+    "convert_human_time_string",
+]

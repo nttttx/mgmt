@@ -1,13 +1,15 @@
-from telebot.async_telebot import AsyncTeleBot
-from .config import config
-from . import handlers
 import asyncio
 import logging
+
+from telebot.async_telebot import AsyncTeleBot
+
+from . import handlers
+from .config import config
 
 log = logging.getLogger(__name__)
 bot = AsyncTeleBot(
     config["BOT_TOKEN"],
-    parse_mode="HTML"
+    parse_mode="HTML",
 )
 
 
@@ -17,7 +19,7 @@ def register_handlers() -> None:
     bot.register_message_handler(
         handlers.start_handler,
         commands=["start"],
-        pass_bot=True
+        pass_bot=True,
     )
 
     bot.register_message_handler(
@@ -25,27 +27,27 @@ def register_handlers() -> None:
         commands=["ban"],
         chat_types=[
             "group",
-            "supergroup"
+            "supergroup",
         ],
-        pass_bot=True
+        pass_bot=True,
     )
     bot.register_message_handler(
         handlers.kick_handler,
         commands=["kick"],
         chat_types=[
             "group",
-            "supergroup"
+            "supergroup",
         ],
-        pass_bot=True
+        pass_bot=True,
     )
     bot.register_message_handler(
         handlers.mute_handler,
         commands=["mute"],
         chat_types=[
             "group",
-            "supergroup"
+            "supergroup",
         ],
-        pass_bot=True
+        pass_bot=True,
     )
 
     bot.register_message_handler(
@@ -53,9 +55,9 @@ def register_handlers() -> None:
         commands=["id"],
         chat_types=[
             "group",
-            "supergroup"
+            "supergroup",
         ],
-        pass_bot=True
+        pass_bot=True,
     )
 
 

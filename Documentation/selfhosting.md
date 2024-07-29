@@ -5,9 +5,9 @@
 ~> git clone https://github.com/sillyheads/mgmt mgmt_bot
 ~> cd mgmt_bot
 ~/mgmt_bot> # Create venv
-~/mgmt_bot> python3.11 -m venv .env
+~/mgmt_bot> python3.11 -m venv .venv
 ~/mgmt_bot> # Enter venv
-~/mgmt_bot> source .env/bin/activate
+~/mgmt_bot> source .venv/bin/activate
 ~/mgmt_bot> pip install -r requirements.txt
 ~/mgmt_bot> cp config.example.json config.json
 ```
