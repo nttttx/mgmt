@@ -3,7 +3,7 @@ import logging
 
 logging.basicConfig(
     level=logging.WARNING,
-    format="%(asctime)s | %(levelname)s in %(name)s - %(message)s",
+    format="%(asctime)s | [%(levelname)-8s] %(name)s (%(filename)s:%(lineno)d): %(message)s",
     filename='app.log'
 )
 

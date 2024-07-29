@@ -23,13 +23,38 @@ def register_handlers() -> None:
     bot.register_message_handler(
         handlers.ban_handler,
         commands=["ban"],
-        chat_types=["group", "supergroup"],
+        chat_types=[
+            "group",
+            "supergroup"
+        ],
         pass_bot=True
     )
     bot.register_message_handler(
         handlers.kick_handler,
         commands=["kick"],
-        chat_types=["group", "supergroup"],
+        chat_types=[
+            "group",
+            "supergroup"
+        ],
+        pass_bot=True
+    )
+    bot.register_message_handler(
+        handlers.mute_handler,
+        commands=["mute"],
+        chat_types=[
+            "group",
+            "supergroup"
+        ],
+        pass_bot=True
+    )
+
+    bot.register_message_handler(
+        handlers.id_handler,
+        commands=["id"],
+        chat_types=[
+            "group",
+            "supergroup"
+        ],
         pass_bot=True
     )
 
